@@ -1,0 +1,19 @@
+<div class="container-fluid row ">
+  <div class=" shadow-lg">
+      <form [formGroup]="LoginForm" (ngSubmit)="Submitform(LoginForm)">
+          <div >
+              <label for="exampleInputPassword1" class="form-label">Enter Your Email</label>
+              <input type="text" formControlName="email" class="form-control  p-2" id="email">
+          </div>
+          <div >
+              <label for="exampleInputPassword1" class="form-label">Enter Your Password</label>
+              <input type="text" formControlName="password" class="form-control  p-2" id="password">
+          </div>
+          <button type="submit" value="submit" class="btn btn-primary w-100 mb-3"
+              [disabled]="!LoginForm.valid">Submit</button>
+          <button class="btn btn-secondary w-100 mb-3" (click)="Register()">Register</button>
+      </form>
+  </div>
+</div>
+
+

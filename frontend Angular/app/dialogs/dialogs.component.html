@@ -1,0 +1,30 @@
+<div class="container-fluid row ">
+    <div class=" shadow-lg">
+        <form [formGroup]="TicketForm" (ngSubmit)="Submitform(TicketForm)">
+            <div >
+                <label for="exampleInputPassword1" class="form-label">Enter Your Name</label>
+                <input type="text" formControlName="name" class="form-control  p-2" id="name">
+            </div>
+            <div >
+                <label for="exampleInputPassword1" class="form-label">Enter Your Age</label>
+                <input type="text" formControlName="age" class="form-control  p-2" id="age">
+            </div>
+            <div >
+                <label for="exampleInputPassword1" class="form-label">Enter Your Phone</label>
+                <input type="text" formControlName="phone" class="form-control  p-2" id="phone">
+            </div>
+            <div >
+                <label for="exampleInputPassword1" class="form-label">Enter Your Email</label>
+                <input type="text" formControlName="email" class="form-control  p-2" id="email">
+            </div>
+            <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectFile($event)" />
+                </label>
+              </div>
+            <button type="submit" value="submit" class="btn btn-primary w-100 mb-3"
+                [disabled]="!TicketForm.valid">Submit</button>
+            <button type="submit" class="btn btn-secondary w-100 mb-3" (click)="BackToCard()">Back</button>
+        </form>
+    </div>
+</div>

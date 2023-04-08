@@ -1,0 +1,113 @@
+<div class="container-fluid" >
+ <section style="background-color: #eee;">
+    <div class="container py-5" *ngFor="let d of data.data">
+      <div class="row p-2">
+        <div class="text-end"> 
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src={{img}} alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h3 class="my-3">{{d.name}}</h3>
+              <p class="text-muted mb-1">Full Stack Developer</p>
+              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+              <div class="d-flex justify-content-center mb-2">
+                <button type="button" class="btn btn-primary"(click)="editdata(d)">Edit Profile</button>
+                <button type="button" class="btn btn-outline-danger ms-1"(click)="deletedata(d)" >Delete Profile</button>
+              </div>
+              <hr>
+              <input type="file" multiple (change)="fileChange($event)" id="upload" hidden/>
+              <label for="upload">Choose file</label>
+              <!-- <div class="text-end"> 
+                <button type="file"  class="btn btn-outline-primary"  id="btnUpload" multiple (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01" ></button>
+              </div> -->
+              <hr>
+              <div>
+                <button class="btn btn-outline-danger ms-1"  (click)="showData()" >My Gallery    </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{d.name}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{d.email}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Mobile</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{d.phone}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Age</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{d.age}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-9">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    </div>
+  </section>
+<div class="container" *ngIf="showDataFlag">
+<div class="row">
+  <div class="flipcard col-3"*ngFor="let i of images">
+     <div class="flipcard-wrap">
+       <div class="card card-front">
+          <img src="{{i.image}}" alt="" class="card-img-top">
+          <div class="card-body">
+            <!-- <a href="{{i.image}}" class="btn btn-outline-danger ms-1" download="{{i.name}}">Download</a>
+            <button class="btn btn-outline-danger ms-1" (click)="preview(i.image)">Preview</button> -->
+          </div>
+        </div>
+        <div class="card card-back">
+          <div class="card-body">
+            <a href="{{i.image}}" class="btn btn-outline-danger ms-1" download="{{i.name}}">Download</a>
+            <button class="btn btn-outline-danger ms-1" (click)="preview(i.image)">Preview</button> 
+          </div>
+          <div >
+            <h4 class="my-3">Image: {{i.name}}</h4>
+          </div>
+        </div>
+    </div>        
+  </div>
+</div>
+</div>
+</div>
